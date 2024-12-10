@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A functional analog clock built with HTML, CSS, and JavaScript, displaying real-time time updates.">
+    <title>Analog Clock</title>
+    <!-- Linking external CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Linking external JavaScript -->
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <!-- Analog Clock Container -->
+    <div id="clockContainer" role="presentation" aria-label="Analog Clock showing real-time updates">
+        <div id="hour" class="clock-hand" role="presentation" aria-label="Hour Hand"></div>
+        <div id="minute" class="clock-hand" role="presentation" aria-label="Minute Hand"></div>
+        <div id="second" class="clock-hand" role="presentation" aria-label="Second Hand"></div>
+    </div>
+
+    <!-- Digital Clock -->
+    <div id="digitalClock" aria-live="polite" aria-label="Current Time in Digital Format"></div>
+
+    <!-- Weather Information -->
+    <div id="weatherInfo" aria-live="polite" aria-label="Current Weather Information"></div>
+
+    <!-- Date Display -->
+    <div id="dateDisplay" aria-label="Current Date"></div>
+
+    <!-- Stopwatch -->
+    <div id="stopwatch" aria-live="polite">
+        <span id="stopwatchTime">00:00:00</span>
+        <button id="startStopwatch" aria-label="Start Stopwatch">Start</button>
+        <button id="resetStopwatch" aria-label="Reset Stopwatch">Reset</button>
+    </div>
+
+    <!-- Alarm -->
+    <label for="alarmTime" aria-label="Set Alarm Time">Set Alarm:</label>
+    <input type="time" id="alarmTime" aria-label="Alarm Time Input">
+    <button id="setAlarm" aria-label="Set Alarm">Set Alarm</button>
+    <audio id="alarmSound" src="alarm tone.mp3" preload="auto" aria-hidden="true"></audio>
+    <div id="alarmMessage" aria-live="assertive" aria-label="Alarm Message"></div>
+
+    <!-- Display current time (optional) -->
+    <p id="currentTime" aria-live="polite" aria-label="Current Time"></p>
+
+    <!-- Theme Selector -->
+    <label for="themeSelect" aria-label="Select Theme">Select Theme:</label>
+    <select id="themeSelect" aria-label="Theme Selector">
+        <option value="classic-theme">Classic</option>
+        <option value="modern-theme">Modern</option>
+        <option value="retro-theme">Retro</option>
+    </select>
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" aria-label="Toggle Dark Mode">Switch to Dark Mode</button>
+
+    <!-- Time Zone Selector -->
+    <label for="timeZone" aria-label="Select Time Zone">Select Time Zone:</label>
+    <select id="timeZone" aria-label="Time Zone Selector">
+        <option value="UTC">UTC</option>
+        <option value="Asia/Kolkata">India (IST)</option>
+        <option value="America/New_York">New York (EST)</option>
+        <option value="Europe/London">London (GMT)</option>
+    </select>
+
+    <!-- Optional: Add a warning for users without JavaScript -->
+    <noscript>
+        <p>This site requires JavaScript to function correctly. Please enable JavaScript in your browser settings.</p>
+    </noscript>
+</body>
+
+</html>
